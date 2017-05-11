@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="835.0" prefWidth="1166.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.studentMainMenuController">
+   <children>
+      <HBox prefHeight="36.0" prefWidth="270.0" AnchorPane.bottomAnchor="799.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="896.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Выйти">
+               <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Мои балы">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text=" Тесты">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <SplitPane dividerPositions="0.2228024369016536" layoutX="4.0" layoutY="32.0" prefHeight="796.0" prefWidth="1158.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="765.0" prefWidth="253.0">
+               <children>
+                  <TableView fx:id="tableContents" prefHeight="786.0" prefWidth="253.0">
+                    <columns>
+                      <TableColumn fx:id="columnTopic" prefWidth="252.0" text="Список тем" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TextArea layoutY="1.0" prefHeight="789.0" prefWidth="890.0" />
+               </children>
+            </AnchorPane>
+        </items>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </SplitPane>
+   </children>
+</AnchorPane>
