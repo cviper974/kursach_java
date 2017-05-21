@@ -1,6 +1,5 @@
 package sample;
 
-import IO.FileCreator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,15 +22,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
-        try {
-            FileCreator file = new FileCreator();
-
-        } catch(IOException e){
-            e.printStackTrace();
-
-            System.out.println("Cannot create files on the system");
-            System.exit(-1);
-        }
     }
 }
