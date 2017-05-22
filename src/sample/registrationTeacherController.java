@@ -8,11 +8,10 @@ import javafx.scene.control.TextField;
 import sample.actors.Student;
 import sample.actors.Teacher;
 
-public class registrationController {
+public class registrationTeacherController {
     private String login;
     private String name;
     private String surname;
-    private String group;
     private String password;
 
     @FXML
@@ -23,9 +22,6 @@ public class registrationController {
 
     @FXML
     private TextField surnameField;
-
-    @FXML
-    private TextField groupField;
 
     @FXML
     private PasswordField passwordField;
@@ -41,16 +37,4 @@ public class registrationController {
         DBOperations.insertTeacher(teacher);
     }
 
-    public void regNewStudent(ActionEvent actionEvent) { //Регаем нового студента
-        login = loginField.getText();
-        name = nameField.getText();
-        surname = surnameField.getText();
-        group = groupField.getText();
-        password = passwordField.getText();
-
-        Student student = new Student(login, name, surname, group, password);
-
-        DBOperations.insertStudent(student);
-
-    }
 }

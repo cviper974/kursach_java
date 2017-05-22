@@ -5,8 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="835.0" prefWidth="1166.0"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.studentMainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="835.0" prefWidth="1166.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.studentMainMenuController">
    <children>
       <HBox prefHeight="36.0" prefWidth="270.0" AnchorPane.bottomAnchor="799.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="896.0">
          <padding>
@@ -34,7 +33,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="765.0" prefWidth="253.0">
                <children>
-                  <TableView fx:id="tableContents" prefHeight="786.0" prefWidth="253.0">
+                  <TableView fx:id="tableContents" onMouseClicked="#choice_of_topic" prefHeight="786.0" prefWidth="253.0">
                     <columns>
                       <TableColumn fx:id="columnTopic" prefWidth="252.0" text="Список тем" />
                     </columns>

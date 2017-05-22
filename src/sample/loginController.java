@@ -24,9 +24,18 @@ public class loginController {
     PasswordField passwordField;
 
     public void btnStudentLogin(ActionEvent actionEvent) {
-        login = loginField.getText();
-        password = passwordField.getText();
+        if(loginField.getText().equals("") || passwordField.getText().equals("")){
+            System.out.println("Blyad");
+        }
         //У тебя есть логин и пароль студента используй их мудро.
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/studentMainMenu.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Главное меню");
+            stage.setScene(new Scene(root, 1166, 835));
+            stage.setResizable(false);
+            stage.show();
+        }catch(IOException e){ e.printStackTrace(); }
     }
 
     public void btnTeacherLogin(ActionEvent actionEvent) {
@@ -35,12 +44,12 @@ public class loginController {
         //У тебя есть логин и пароль препода используй их мудро.
     }
 
-    public void btnRegistration(ActionEvent actionEvent) {
+    public void btnRegistrationAsStudent(ActionEvent actionEvent) {
         //Создание выскакивающего окошка с формой регистрации.
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("../fxml/registration.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("../fxml/registrationStudent.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Регистрируйся блядь");
+            stage.setTitle("Регистрация студента");
             stage.setMinWidth(250);
             stage.setMinHeight(294);
             stage.setResizable(false);
@@ -49,7 +58,21 @@ public class loginController {
             stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
             stage.show();
         }catch(IOException e){e.printStackTrace();}
+    }
 
-
+    public void btnRegistrationAsTeacher(ActionEvent actionEvent) {
+        //Создание выскакивающего окошка с формой регистрации.
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("../fxml/registrationTeacher.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Регистрация преподавателя");
+            stage.setMinWidth(250);
+            stage.setMinHeight(255);
+            stage.setResizable(false);
+            stage.setScene(new Scene(parent));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
+            stage.show();
+        }catch(IOException e){e.printStackTrace();}
     }
 }
