@@ -42,7 +42,7 @@ public class studentMainMenuController {
         MouseButton mouseButton = mouseEvent.getButton();
 
         if(mouseButton.name().equals("PRIMARY")){
-            System.out.println(selectedTopic.getFilePath());
+            System.out.println(selectedTopic.getTopicName());
             //У тебя есть путь к файлу выбранной студентом темы делай шо хош с ним.
         }
     }

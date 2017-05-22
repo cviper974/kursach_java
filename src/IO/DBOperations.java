@@ -138,7 +138,6 @@ public class DBOperations {
             PreparedStatement ps = dbw.getConnection().prepareStatement(preparedstatement);
 
             ps.setString(1, topic.getTopicName());
-            ps.setString(2, topic.getFilePath());
             ps.executeUpdate();
 
             ps.close();

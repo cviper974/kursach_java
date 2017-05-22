@@ -24,8 +24,8 @@ public class TopicTable {
     public void fillData(){
         //Сделай запрос в БД и вытащи все темы из неё после чего запхай в эту коллекцию.
         contents.addAll();//В этот метод передай все темы что вытащил из БД.
-        contents.add(new Topic("dasd", "C:/User/Documents/myDoc1"));//Просто тестовые вставки в таблицу
-        contents.add(new Topic("asd", "C:/User/Documents/myDoc2"));//для того чтобы глянуть как все
-        contents.add(new Topic("asdasd", "C:/User/Documents/myDoc3"));//смотрится. Не забудь убрать их.
+        contents.add(new Topic("dasd"));//Просто тестовые вставки в таблицу
+        contents.add(new Topic("asd"));//для того чтобы глянуть как все
+        contents.add(new Topic("asdasd"));//смотрится. Не забудь убрать их.
     }
 }
