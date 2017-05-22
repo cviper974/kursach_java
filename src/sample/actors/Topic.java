@@ -23,14 +23,6 @@ public class Topic implements Serializable{
         this.topicName = topicName;
     }
 
-    public String getFilePath() {
-        return path_to_topic;
-    }
-
-    public void setFilePath(String path_to_topic) {
-        this.path_to_topic = path_to_topic;
-    }
-
     @Override
     public String toString() {
         return "Topic{" +
