@@ -2,16 +2,13 @@
 
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.text.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="268.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="266.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView layoutX="-1.0" layoutY="-1.0" prefHeight="404.0" prefWidth="268.0">
+      <TableView layoutX="-1.0" layoutY="-1.0" prefHeight="404.0" prefWidth="268.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0" fx:id="tableContents">
         <columns>
-          <TableColumn fx:id="Subject" prefWidth="200.0" text="Тема" />
-            <TableColumn fx:id="Marks" minWidth="9.0" prefWidth="67.0" text="Баллы" />
+          <TableColumn fx:id="Subject" prefWidth="195.0" text="Тема" />
+            <TableColumn fx:id="Marks" minWidth="20.0" prefWidth="72.0" text="Баллы" />
         </columns>
       </TableView>
    </children>

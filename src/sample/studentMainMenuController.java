@@ -53,13 +53,12 @@ public class studentMainMenuController {
     }
 
     public void ShowMarks(ActionEvent actionEvent) {
-        Topic selectedTopic = (Topic)tableContents.getSelectionModel().getSelectedItem();
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("../fxml/showMarks.fxml"));
             Stage stage = new Stage();
             stage.setTitle(".");
-            stage.setMinWidth(202);
-            stage.setMinHeight(204);
+            stage.setMinWidth(268);
+            stage.setMinHeight(404);
             stage.setResizable(false);
             stage.setScene(new Scene(parent));
             stage.initModality(Modality.WINDOW_MODAL);

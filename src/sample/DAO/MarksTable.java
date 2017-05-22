@@ -2,16 +2,19 @@ package sample.DAO;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import sample.actors.Topic;
+import sample.actors.StudentMarksSubject;
 
 public class MarksTable {
-    private ObservableList<Topic> contents = FXCollections.observableArrayList();
+    private ObservableList<StudentMarksSubject> contents = FXCollections.observableArrayList();
+
+    public ObservableList<StudentMarksSubject> getTopicList(){ return contents; }
 
     public void fillData(){
         //Сделай запрос в БД и вытащи все темы из неё после чего запхай в эту коллекцию.
         //contents.addAll();//В этот метод передай все темы что вытащил из БД.
-        contents.add(new Topic("dasd", "C:/User/Documents/myDoc1"));//Просто тестовые вставки в таблицу
-        contents.add(new Topic("asd", "C:/User/Documents/myDoc2"));//для того чтобы глянуть как все
-        contents.add(new Topic("asdasd", "C:/User/Documents/myDoc3"));//смотрится. Не забудь убрать их.
+        contents.add(new StudentMarksSubject("asdasd", 123));//Просто тестовые вставки в таблицу
+        contents.add(new StudentMarksSubject("asdas", 1123132));//для того чтобы глянуть как все
+        contents.add(new StudentMarksSubject("aaaaa", 123123123));//смотрится. Не забудь убрать их.
+        System.out.println("true");
     }
 }
