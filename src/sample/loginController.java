@@ -1,5 +1,6 @@
 package sample;
 
+import IO.DBOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,33 +25,36 @@ public class loginController {
     private PasswordField passwordField;
 
     public void btnStudentLogin(ActionEvent actionEvent) {
-        if(loginField.getText().equals("") || passwordField.getText().equals("")){
-            System.out.println("Blyad");
+        if (DBOperations.loginCheckStudent(loginField.getText(), passwordField.getText()))
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("../fxml/studentMainMenu.fxml"));
+                Stage stage = new Stage();
+                stage.setTitle("Главное меню");
+                stage.setScene(new Scene(root, 1166, 835));
+                stage.setResizable(false);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+        } else{
+            System.out.println("Login error");
         }
-        //У тебя есть логин и пароль студента используй их мудро.
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("../fxml/studentMainMenu.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Главное меню");
-            stage.setScene(new Scene(root, 1166, 835));
-            stage.setResizable(false);
-            stage.show();
-        }catch(IOException e){ e.printStackTrace(); }
     }
 
     public void btnTeacherLogin(ActionEvent actionEvent) {
-        if(loginField.getText().equals("") || passwordField.getText().equals("")){
-            System.out.println("Blyad");
+        if (DBOperations.loginCheckTeacher(loginField.getText(), passwordField.getText())) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("../fxml/teacherMainMenu.fxml"));
+                Stage stage = new Stage();
+                stage.setTitle("Главное меню");
+                stage.setScene(new Scene(root, 1166, 835));
+                stage.setResizable(false);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else{
+            System.out.println("Login error");
         }
-        //У тебя есть логин и пароль препода используй их мудро.
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("../fxml/teacherMainMenu.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Главное меню");
-            stage.setScene(new Scene(root, 1166, 835));
-            stage.setResizable(false);
-            stage.show();
-        }catch(IOException e){ e.printStackTrace(); }
     }
 
     public void btnRegistrationAsStudent(ActionEvent actionEvent) {
