@@ -131,14 +131,13 @@ public class DBOperations {
         DBWorker dbw = new DBWorker();
 
         try {
-            String preparedstatement = "INSERT INTO topics (name, filepath)" +
+            String preparedstatement = "INSERT INTO topics (name, contents)" +
                     " VALUES (?, ?)";
 
 
             PreparedStatement ps = dbw.getConnection().prepareStatement(preparedstatement);
 
             ps.setString(1, topic.getTopicName());
-            ps.setString(2, topic.getFilePath());
             ps.executeUpdate();
 
             ps.close();
