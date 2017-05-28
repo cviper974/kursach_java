@@ -18,10 +18,10 @@ public class loginController {
     private String password;
 
     @FXML
-    TextField loginField;
+    private TextField loginField;
 
     @FXML
-    PasswordField passwordField;
+    private PasswordField passwordField;
 
     public void btnStudentLogin(ActionEvent actionEvent) {
         if(loginField.getText().equals("") || passwordField.getText().equals("")){

@@ -77,6 +77,18 @@ public class teacherMainMenuController {
     }
 
     public void addTopic(ActionEvent actionEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("../fxml/addTopic.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle(".");
+            stage.setMinWidth(1166);
+            stage.setMinHeight(835);
+            stage.setResizable(false);
+            stage.setScene(new Scene(parent));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
+            stage.show();
+        }catch(IOException e){e.printStackTrace();}
     }
 
     public void addTest(ActionEvent actionEvent) {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="838.0" prefWidth="1166.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.addTopicController">
+   <children>
+      <Pane layoutX="4.0" prefHeight="37.0" prefWidth="327.0">
+         <children>
+            <TextField fx:id="topicName" layoutY="6.0" prefHeight="25.0" prefWidth="327.0" promptText="Введите название темы" />
+         </children>
+      </Pane>
+      <Button fx:id="addTopic" layoutX="331.0" layoutY="6.0" mnemonicParsing="false" onAction="#AddTopic" prefHeight="25.0" prefWidth="71.0" text="Добавить" />
+      <Pane layoutX="4.0" layoutY="31.0" prefHeight="804.0" prefWidth="1166.0">
+         <children>
+            <TextArea fx:id="topicText" layoutX="-2.0" prefHeight="804.0" prefWidth="1159.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
