@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,12 +19,14 @@ import sample.actors.Topic;
 
 import java.io.IOException;
 
-//Этот класс обслуживает меню студента
-public class studentMainMenuController {
-    private TopicTable topicTable_ = new TopicTable();
+public class teacherMainMenuController {
+    private TopicTable topicTable = new TopicTable();
 
     @FXML
     private TableView tableContents;
+
+    @FXML
+    private ContextMenu contextMenu;
 
     @FXML
     private TableColumn<Topic, String> columnTopic;
@@ -32,8 +35,9 @@ public class studentMainMenuController {
     @FXML
     private void initialize(){
         columnTopic.setCellValueFactory(new PropertyValueFactory<Topic, String>("topicName"));
-        topicTable_.fillData();
-        tableContents.setItems(topicTable_.getTopicList());
+        topicTable.fillData();
+        tableContents.setItems(topicTable.getTopicList());
+        tableContents.setContextMenu(contextMenu);
     }
 
     //Получаем тему которую выбрал студент.
@@ -48,13 +52,22 @@ public class studentMainMenuController {
         }
     }
 
-    public void ShowMarks(ActionEvent actionEvent) {
+
+    public void DeleteTopic(ActionEvent actionEvent) {
+        Topic topic = (Topic) tableContents.getSelectionModel().getSelectedItem();
+        topicTable.deleteTopic(topic);
+    }
+
+    public void Rename(ActionEvent actionEvent) {
+    }
+
+    public void showStudents(ActionEvent actionEvent) {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("../fxml/showMarks.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("../fxml/showStudents.fxml"));
             Stage stage = new Stage();
             stage.setTitle(".");
-            stage.setMinWidth(268);
-            stage.setMinHeight(404);
+            stage.setMinWidth(456);
+            stage.setMinHeight(448);
             stage.setResizable(false);
             stage.setScene(new Scene(parent));
             stage.initModality(Modality.WINDOW_MODAL);
@@ -63,8 +76,9 @@ public class studentMainMenuController {
         }catch(IOException e){e.printStackTrace();}
     }
 
-    public void ShowTests(ActionEvent actionEvent) {
-        //Хз надо придумать как тесты красиво сделать
+    public void addTopic(ActionEvent actionEvent) {
+    }
+
+    public void addTest(ActionEvent actionEvent) {
     }
 }
-

@@ -12,7 +12,7 @@ public class TopicTable {
     }
 
     public void deleteTopic(Topic topic){
-
+        contents.remove(topic);
     }
 
     public void updateTopic(Topic topic){

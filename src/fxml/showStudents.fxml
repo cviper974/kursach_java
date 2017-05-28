@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.showStudentsController">
+   <children>
+      <TableView fx:id="tableStudents" layoutY="1.0" prefHeight="448.0" prefWidth="456.0">
+         <columns>
+            <TableColumn fx:id="Student" prefWidth="166.0" text="Студент" />
+            <TableColumn fx:id="Group" minWidth="20.0" prefWidth="76.0" text="Группа" />
+            <TableColumn fx:id="Topic" prefWidth="153.0" text="Тема" />
+            <TableColumn fx:id="Marks" prefWidth="60.0" text="Баллы" />
+         </columns>
+         <contextMenu>
+            <ContextMenu fx:id="contextMenu">
+               <items>
+                  <MenuItem fx:id="delete" mnemonicParsing="false" onAction="#Delete" text="Удалить" />
+                  <MenuItem fx:id="refactor" mnemonicParsing="false" onAction="#Refactor" text="Изменить" />
+               </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+   </children>
+</AnchorPane>

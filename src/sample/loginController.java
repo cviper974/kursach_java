@@ -39,9 +39,18 @@ public class loginController {
     }
 
     public void btnTeacherLogin(ActionEvent actionEvent) {
-        login = loginField.getText();
-        password = passwordField.getText();
+        if(loginField.getText().equals("") || passwordField.getText().equals("")){
+            System.out.println("Blyad");
+        }
         //У тебя есть логин и пароль препода используй их мудро.
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/teacherMainMenu.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Главное меню");
+            stage.setScene(new Scene(root, 1166, 835));
+            stage.setResizable(false);
+            stage.show();
+        }catch(IOException e){ e.printStackTrace(); }
     }
 
     public void btnRegistrationAsStudent(ActionEvent actionEvent) {
