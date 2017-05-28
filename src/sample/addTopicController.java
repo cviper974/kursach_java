@@ -17,8 +17,8 @@ public class addTopicController {
 
     public void AddTopic(ActionEvent actionEvent) {
         if(topicName.getText().equals("") || topicText.getText().equals("")){
-            topicName.setText("!!!Something field is empty!!!");
-            topicText.setText("!!!Something field is empty!!!");
+            topicName.setText("!!!Name field is empty!!!");
+            topicText.setText("!!!Text field is empty!!!");
         } else {
             name = topicName.getText();
             text = topicText.getText();
