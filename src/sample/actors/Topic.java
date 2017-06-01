@@ -7,7 +7,22 @@ public class Topic implements Serializable{
 
     private String topicName;
 
+    private String topicText;
+
+    public Topic(String topicName, String topicText) {
+        this.topicName = topicName;
+        this.topicText = topicText;
+    }
+
     public Topic(String topicName) { this.topicName = topicName; }
+
+    public String getTopicText() {
+        return topicText;
+    }
+
+    public void setTopicText(String topicText) {
+        this.topicText = topicText;
+    }
 
     public String getTopicName() {
         return topicName;

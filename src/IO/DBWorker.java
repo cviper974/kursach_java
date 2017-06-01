@@ -9,7 +9,7 @@ public class DBWorker {
 
     private static final String URL = "jdbc:mysql://localhost:3306/database";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "1q2w3e3e2w1q4r";
     Connection connection;
 
     public DBWorker() {

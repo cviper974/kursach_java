@@ -13,7 +13,7 @@ public class showStudentsController {
     private StudentMarkSubjectTable studentMarkSubjectTable = new StudentMarkSubjectTable();
 
     @FXML
-    private TableView tableContents;
+    private TableView tableStudents;
 
     @FXML
     private ContextMenu contextMenu;
@@ -37,12 +37,12 @@ public class showStudentsController {
         Topic.setCellValueFactory(new PropertyValueFactory<StudentMarksSubject, String>("topic"));
         Marks.setCellValueFactory(new PropertyValueFactory<StudentMarksSubject, Integer>("marks"));
         studentMarkSubjectTable.fillData();
-        tableContents.setItems(studentMarkSubjectTable.getStudentMarksSubjectList());
-        tableContents.setContextMenu(contextMenu);
+        tableStudents.setItems(studentMarkSubjectTable.getStudentMarksSubjectList());
+        tableStudents.setContextMenu(contextMenu);
     }
 
     public void Delete(ActionEvent actionEvent) {
-        StudentMarksSubject studentMarksSubject = (StudentMarksSubject) tableContents.getSelectionModel().getSelectedItem();
+        StudentMarksSubject studentMarksSubject = (StudentMarksSubject) tableStudents.getSelectionModel().getSelectedItem();
         studentMarkSubjectTable.deleteStudentMarksSubject(studentMarksSubject);
     }
 

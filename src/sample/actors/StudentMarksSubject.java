@@ -1,6 +1,10 @@
 package sample.actors;
 
-public class StudentMarksSubject {
+import java.io.Serializable;
+
+public class StudentMarksSubject implements Serializable {
+    private static final long serialVersionUID = 4L;
+
     private String name;
     private String group;
     private String subject;

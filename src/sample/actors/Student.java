@@ -3,7 +3,7 @@ package sample.actors;
 import java.io.Serializable;
 
 public class Student implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     private String login;
     private String name;

@@ -4,10 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import sample.actors.Topic;
 
 public class addTopicController {
-    private String name;
-    private String text;
 
     @FXML
     private TextField topicName;
@@ -20,25 +19,8 @@ public class addTopicController {
             topicName.setText("!!!Something field is empty!!!");
             topicText.setText("!!!Something field is empty!!!");
         } else {
-            name = topicName.getText();
-            text = topicText.getText();
+            Topic topic = new Topic(topicName.getText(), topicText.getText());
             System.out.println("successful");
         }
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
     }
 }

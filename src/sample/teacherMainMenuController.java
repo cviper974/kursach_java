@@ -31,7 +31,6 @@ public class teacherMainMenuController {
     @FXML
     private TableColumn<Topic, String> columnTopic;
 
-    //Заполняем таблицу данными из коллекции
     @FXML
     private void initialize(){
         columnTopic.setCellValueFactory(new PropertyValueFactory<Topic, String>("topicName"));
@@ -92,5 +91,17 @@ public class teacherMainMenuController {
     }
 
     public void addTest(ActionEvent actionEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("../fxml/addTest.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle(".");
+            stage.setMinWidth(359);
+            stage.setMinHeight(151);
+            stage.setResizable(false);
+            stage.setScene(new Scene(parent));
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());
+            stage.show();
+        }catch(IOException e){e.printStackTrace();}
     }
 }
