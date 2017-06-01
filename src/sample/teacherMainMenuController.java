@@ -1,5 +1,6 @@
 package sample;
 
+import IO.DBOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -32,6 +34,9 @@ public class teacherMainMenuController {
     private TableColumn<Topic, String> columnTopic;
 
     @FXML
+    private TextArea textArea;
+
+    @FXML
     private void initialize(){
         columnTopic.setCellValueFactory(new PropertyValueFactory<Topic, String>("topicName"));
         topicTable.fillData();
@@ -46,7 +51,8 @@ public class teacherMainMenuController {
 
         if(mouseButton.name().equals("PRIMARY")) {
             if (selectedTopic != null) {
-                System.out.println(selectedTopic.getTopicName());
+                DBOperations.receiveAllTopics();
+                textArea.setText(DBOperations.receiveTopicContent(selectedTopic.getTopicName()));
             }else {System.out.println("empty");}
         }
     }

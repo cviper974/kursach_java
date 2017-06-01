@@ -52,6 +52,8 @@ public class loginController {
                 stage.setScene(new Scene(root, 1166, 835));
                 stage.setResizable(false);
                 stage.show();
+
+                System.out.println(DBOperations.receiveTopicContent("2"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

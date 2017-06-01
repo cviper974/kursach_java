@@ -222,16 +222,19 @@ public class DBOperations {
         }
     }
 
-    public static String receiveTopicContent (){
+    public static String receiveTopicContent (String name){
         DBWorker dbw = new DBWorker();
-        String query = "SELECT name, contents FROM topics";
+
+        name = "\"" + name + "\"";
+
+        String query = "SELECT contents FROM topics WHERE name = " + name;
         String contentsReceived = null;
 
         try{
             PreparedStatement ps = dbw.getConnection().prepareStatement(query);
             ResultSet rs = ps.executeQuery();
 
-            contentsReceived = rs.getString(3);
+            contentsReceived = rs.getString(1);
 
         } catch (SQLException e) {
             e.printStackTrace();
