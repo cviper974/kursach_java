@@ -17,7 +17,6 @@
             <ContextMenu fx:id="contextMenu">
                <items>
                   <MenuItem fx:id="delete" mnemonicParsing="false" onAction="#Delete" text="Удалить" />
-                  <MenuItem fx:id="refactor" mnemonicParsing="false" onAction="#Refactor" text="Изменить" />
                </items>
             </ContextMenu>
          </contextMenu>

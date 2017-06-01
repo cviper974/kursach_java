@@ -18,7 +18,6 @@
                               <ContextMenu fx:id="contextMenu">
                                 <items>
                                   <MenuItem fx:id="Delete" mnemonicParsing="false" onAction="#DeleteTopic" text="Удалить" />
-                                    <MenuItem fx:id="rename" mnemonicParsing="false" onAction="#Rename" text="Переименовать " />
                                 </items>
                               </ContextMenu>
                            </contextMenu></TableColumn>

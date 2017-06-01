@@ -1,5 +1,6 @@
 package IO;
 
+import com.sun.javafx.image.IntPixelGetter;
 import sample.actors.Student;
 import sample.actors.StudentMarksSubject;
 import sample.actors.Teacher;
@@ -196,6 +197,31 @@ public class DBOperations {
         }
     }
 
+    public static ArrayList<StudentMarksSubject> receiveAllSMS(){
+        ArrayList<StudentMarksSubject> smsReceived = new ArrayList <>();
+        String query = "SELECT * FROM studentmarksubject";
+        DBWorker dbw = new DBWorker();
+
+        try{
+            PreparedStatement ps = dbw.getConnection().prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                StudentMarksSubject  sms = new StudentMarksSubject (rs.getString(1), rs.getString(2), rs.getString(3), Integer.parseInt(rs.getString(4)));
+                smsReceived.add(sms);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (smsReceived.size() != 0){
+            return  smsReceived;
+        } else{
+            return null;
+        }
+    }
+
     public static String receiveTopicContent (){
         DBWorker dbw = new DBWorker();
         String query = "SELECT name, contents FROM topics";
@@ -238,7 +264,7 @@ public class DBOperations {
         }
     }
 
-    public static String receiveMark (Student student, String subject){
+    public static String receiveMarks (Student student, String subject){
         DBWorker dbw = new DBWorker();
         String query = "SELECT mark FROM studentmarksubject WHERE name LIKE " + student.getName() + " AND subject LIKE "
                 + subject;
