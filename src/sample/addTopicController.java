@@ -1,5 +1,6 @@
 package sample;
 
+import IO.DBOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -20,7 +21,7 @@ public class addTopicController {
             topicText.setText("!!!Text field is empty!!!");
         } else {
             Topic topic = new Topic(topicName.getText(), topicText.getText());
-            System.out.println("successful");
+            DBOperations.insertTopic(topic);
         }
     }
 }

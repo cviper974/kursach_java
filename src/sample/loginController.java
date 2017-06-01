@@ -25,10 +25,7 @@ public class loginController {
     private PasswordField passwordField;
 
     public void btnStudentLogin(ActionEvent actionEvent) {
-        if(loginField.getText().equals(" ") || passwordField.getText().equals(" ")) {
-            System.out.println("blyad");
-        }
-            //if (DBOperations.loginCheckStudent(loginField.getText(), passwordField.getText()))
+        if(DBOperations.loginCheckStudent(loginField.getText(), passwordField.getText())) {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("../fxml/studentMainMenu.fxml"));
                 Stage stage = new Stage();
@@ -39,16 +36,15 @@ public class loginController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-//        } else{
-//            System.out.println("Login error");
-//        }
+        } else{
+            System.out.println("Login failed");
+        }
+
     }
 
     public void btnTeacherLogin(ActionEvent actionEvent) {
-        if(loginField.getText().equals(" ") || passwordField.getText().equals(" ")) {
-            System.out.println("blyad");
-        }
-        //if (DBOperations.loginCheckTeacher(loginField.getText(), passwordField.getText())) {
+
+        if (DBOperations.loginCheckTeacher(loginField.getText(), passwordField.getText())) {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("../fxml/teacherMainMenu.fxml"));
                 Stage stage = new Stage();
@@ -59,9 +55,9 @@ public class loginController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-//        } else{
-//            System.out.println("Login error");
-//        }
+        } else{
+            System.out.println("Login error");
+        }
     }
 
     public void btnRegistrationAsStudent(ActionEvent actionEvent) {
